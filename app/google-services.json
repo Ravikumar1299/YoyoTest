@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "488031237077",
+    "project_id": "yoyo-beep-fitness-test",
+    "storage_bucket": "yoyo-beep-fitness-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488031237077:android:6e5181f85aaf465811435c",
+        "android_client_info": {
+          "package_name": "com.yoyobeep.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488031237077-b9fvoea7rukvv547ven9e7buakvjhjtk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.yoyobeep.test",
+            "certificate_hash": "f8752013acdcc0d3ac2b2ebdb6cff5c9b6a7624e"
+          }
+        },
+        {
+          "client_id": "488031237077-0hlq60n6iakbmab23t3ur3lvfo9bvs5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbDz_2Jr1lrw3aPtgWr9y-VkFQrwHCrrQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488031237077-0hlq60n6iakbmab23t3ur3lvfo9bvs5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
