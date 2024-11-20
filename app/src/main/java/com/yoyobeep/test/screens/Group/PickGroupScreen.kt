@@ -5,7 +5,6 @@ import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Build
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
@@ -66,15 +65,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import coil.compose.rememberAsyncImagePainter
 import com.yoyobeep.test.database.GroupViewModel
-import com.yoyobeep.test.database.PlayerViewModel
-import com.yoyobeep.test.screens.AgeInputField
-import com.yoyobeep.test.screens.GenderSelection
 import com.yoyobeep.test.screens.Header
-import com.yoyobeep.test.screens.HeightWeightSlider
-import com.yoyobeep.test.screens.ImagePickerWithIntent
-import com.yoyobeep.test.screens.ImagePickerWithPhotoPicker
 import com.yoyobeep.test.screens.PlayerMainContent
-import com.yoyobeep.test.screens.SheetContent
 import com.yoyobeep.test.screens.loadBitmapFromUri
 import com.yoyobeep.test.ui.theme.AppBackgroundColor
 import com.yoyobeep.test.ui.theme.fontFamily
@@ -238,7 +230,7 @@ private fun AddGroupBottomSheet(navController: NavHostController) {
                     .heightIn(max = 700.dp) // Limit the maximum height
                     .padding(top = 16.dp)
             ) {
-                AddGroupSheetContent(playerViewModel = viewModel(), bottomSheetScaffoldState)
+                AddGroupSheetContent(groupViewModel = viewModel(), bottomSheetScaffoldState)
             }
         },
         // Adjust the peek height for initial view
@@ -250,7 +242,8 @@ private fun AddGroupBottomSheet(navController: NavHostController) {
             modifier = Modifier.fillMaxSize(),
             color = splashColor // Set the background color for the Surface
         ) {
-            PlayerMainContent(navController,bottomSheetScaffoldState.bottomSheetState, bottomSheetScaffoldState)
+//            PlayerMainContent(navController,bottomSheetScaffoldState.bottomSheetState,
+//                bottomSheetScaffoldState)
         }
     }
 
@@ -282,15 +275,6 @@ fun AddGroupSheetContent(
             GroupImagePickerWithIntent(groupViewModel)
         }
 
-        // Name Input Field
-        androidx.compose.material.OutlinedTextField(
-            value = groupViewModel.name,
-            onValueChange = { groupViewModel.name = it },
-            label = { Text("Name") },
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(62.dp)
-        )
 
 
         // Save Player Button

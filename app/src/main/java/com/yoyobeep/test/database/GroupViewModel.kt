@@ -30,7 +30,7 @@ class GroupViewModel(application: Application) : AndroidViewModel(application) {
     var groupId by mutableStateOf(0)
     var groupName by mutableStateOf("")
     var groupIcon by mutableStateOf<Bitmap?>(null)
-
+    var image by mutableStateOf<Bitmap?>(null)
     init {
         // Fetch all groups from the database and update _groups
         groupDao.getAllGroups().observeForever { groupList ->
@@ -90,6 +90,10 @@ class GroupViewModel(application: Application) : AndroidViewModel(application) {
             groupName = it.groupName
             groupIcon = getBitmapFromByteArray(it.groupIcon)
         }
+    }
+
+    fun updatePlayerImage(bitmap: Bitmap?) {
+        image = bitmap
     }
 
 //    // Function to update an existing group
